@@ -1,0 +1,572 @@
+================= Efecto de tamaño del caché =================
+Parámetros fijos:
+cache_assoc = 8
+block_size = 64
+repl_policy = l
+
++++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+1498,0.150%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+571,0.057%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+287,0.029%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+247,0.025%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+234,0.023%
+
++++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+25265,2.526%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+21964,2.196%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+19082,1.908%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+13129,1.313%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+4604,0.460%
+
++++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+30147,3.015%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+26211,2.621%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+24315,2.432%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+23332,2.333%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+23106,2.311%
+
++++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+44488,4.449%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+22564,2.256%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+16439,1.644%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+14853,1.485%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+13975,1.397%
+
++++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+41487,4.149%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+24657,2.466%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+12522,1.252%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4213,0.421%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+1440,0.144%
+
++++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+113718,11.372%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+111518,11.152%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+107671,10.767%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+101768,10.177%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+95293,9.529%
+
++++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+24305,2.430%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+22609,2.261%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+22384,2.238%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+22219,2.222%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+22175,2.217%
+
++++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+8076,0.808%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+5899,0.590%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+4857,0.486%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4071,0.407%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+3521,0.352%
+
++++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+124258,12.426%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+59143,5.914%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+7304,0.730%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4965,0.496%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+3573,0.357%
+
++++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+5091,0.509%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+4779,0.478%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+4537,0.454%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4054,0.405%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+4042,0.404%
+
++++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+23098,2.310%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+14612,1.461%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+5357,0.536%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+1667,0.167%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+1176,0.118%
+
++++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+69658,6.966%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+39697,3.970%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+15406,1.541%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4857,0.486%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+1977,0.198%
+
++++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+81648,8.165%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+75630,7.563%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+69944,6.994%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+63709,6.371%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+57296,5.730%
+
++++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+44481,4.448%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+34780,3.478%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+27066,2.707%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+14206,1.421%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+4221,0.422%
+
++++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+627,0.063%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+525,0.052%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+486,0.049%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+432,0.043%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+419,0.042%
+
++++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+12927,1.293%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+9468,0.947%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+5161,0.516%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4179,0.418%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+3761,0.376%
+
++++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+42253,4.225%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+24127,2.413%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+9316,0.932%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+2709,0.271%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+1553,0.155%
+
++++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+25617,2.562%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+21357,2.136%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+20077,2.008%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+19760,1.976%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+19430,1.943%
+
++++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+18209,1.821%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+17933,1.793%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+17797,1.780%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+17729,1.773%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+17695,1.770%
+
++++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+3864,0.386%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+917,0.092%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+780,0.078%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+639,0.064%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+557,0.056%
+
++++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+29994,2.999%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+28742,2.874%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+28471,2.847%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+28300,2.830%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+28218,2.822%
+
++++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+50162,5.016%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+42459,4.246%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+38730,3.873%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+36333,3.633%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+25343,2.534%
+
++++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+98868,9.887%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+78116,7.812%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+37393,3.739%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+23414,2.341%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+19206,1.921%
+
++++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+6106,0.611%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+5393,0.539%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+4919,0.492%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+4106,0.411%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+3237,0.324%
+
++++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+7274,0.727%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+5864,0.586%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+4447,0.445%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+3669,0.367%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+3288,0.329%
+
++++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+19929,1.993%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+15878,1.588%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+13904,1.390%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+12306,1.231%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+11392,1.139%
+
++++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++
++ Variación de tamaño del caché: 8 +
+Resultados de la simulación:
+26540,2.654%
+
++ Variación de tamaño del caché: 16 +
+Resultados de la simulación:
+23212,2.321%
+
++ Variación de tamaño del caché: 32 +
+Resultados de la simulación:
+21886,2.189%
+
++ Variación de tamaño del caché: 64 +
+Resultados de la simulación:
+21285,2.128%
+
++ Variación de tamaño del caché: 128 +
+Resultados de la simulación:
+20991,2.099%

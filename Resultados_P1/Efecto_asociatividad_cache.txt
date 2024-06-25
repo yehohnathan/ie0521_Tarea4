@@ -1,0 +1,572 @@
+================= Efecto de asociatividad del caché =================
+Parámetros fijos:
+cache_capacity = 32
+block_size = 64
+repl_policy = l
+
++++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+12824,1.282%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+1021,0.102%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+331,0.033%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+287,0.029%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+292,0.029%
+
++++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+24342,2.434%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+19752,1.975%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+19120,1.912%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+19082,1.908%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+18921,1.892%
+
++++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+86183,8.618%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+31005,3.100%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+25025,2.502%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+24315,2.432%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+23663,2.366%
+
++++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+87220,8.722%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+84725,8.473%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+85892,8.589%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+16439,1.644%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+13564,1.356%
+
++++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+36143,3.614%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+21438,2.144%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+15535,1.554%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+12522,1.252%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+11226,1.123%
+
++++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+108020,10.802%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+107518,10.752%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+107607,10.761%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+107671,10.767%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+107734,10.773%
+
++++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+23826,2.383%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+22354,2.235%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+22372,2.237%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+22384,2.238%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+22460,2.246%
+
++++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+5836,0.584%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+4914,0.491%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+4791,0.479%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+4857,0.486%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+4888,0.489%
+
++++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+57423,5.742%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+13579,1.358%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+11512,1.151%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+7304,0.730%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+7112,0.711%
+
++++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+6676,0.668%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+4869,0.487%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+4104,0.410%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+4537,0.454%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+4523,0.452%
+
++++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+13666,1.367%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+8675,0.868%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+6307,0.631%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+5357,0.536%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+4846,0.485%
+
++++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+33497,3.350%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+22272,2.227%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+18549,1.855%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+15406,1.541%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+15042,1.504%
+
++++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+73165,7.316%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+72126,7.213%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+70030,7.003%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+69944,6.994%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+69417,6.942%
+
++++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+31524,3.152%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+28111,2.811%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+27240,2.724%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+27066,2.707%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+27190,2.719%
+
++++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+483,0.048%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+493,0.049%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+490,0.049%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+486,0.049%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+538,0.054%
+
++++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+10465,1.046%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+8213,0.821%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+5549,0.555%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+5161,0.516%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+5043,0.504%
+
++++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+15312,1.531%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+11993,1.199%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+9889,0.989%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+9316,0.932%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+9262,0.926%
+
++++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+27302,2.730%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+28812,2.881%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+23116,2.312%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+20077,2.008%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+19250,1.925%
+
++++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+18615,1.861%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+18185,1.819%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+17789,1.779%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+17797,1.780%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+17813,1.781%
+
++++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+5350,0.535%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+1046,0.105%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+756,0.076%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+780,0.078%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+790,0.079%
+
++++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+30249,3.025%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+28589,2.859%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+28377,2.838%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+28471,2.847%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+28506,2.851%
+
++++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+45288,4.529%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+39701,3.970%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+39014,3.901%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+38730,3.873%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+39190,3.919%
+
++++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+55645,5.564%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+47122,4.712%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+43002,4.300%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+37393,3.739%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+34713,3.471%
+
++++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+5998,0.600%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+5713,0.571%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+5400,0.540%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+4919,0.492%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+4963,0.496%
+
++++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+7091,0.709%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+4660,0.466%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+4644,0.464%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+4447,0.445%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+4384,0.438%
+
++++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+22693,2.269%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+14363,1.436%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+13748,1.375%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+13904,1.390%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+13714,1.371%
+
++++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++
++ Variación de asociatividad del caché: 1 +
+Resultados de la simulación:
+23191,2.319%
+
++ Variación de asociatividad del caché: 2 +
+Resultados de la simulación:
+22330,2.233%
+
++ Variación de asociatividad del caché: 4 +
+Resultados de la simulación:
+21892,2.189%
+
++ Variación de asociatividad del caché: 8 +
+Resultados de la simulación:
+21886,2.189%
+
++ Variación de asociatividad del caché: 16 +
+Resultados de la simulación:
+21904,2.190%
