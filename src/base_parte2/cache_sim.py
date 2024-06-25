@@ -25,3 +25,5 @@ with gzip.open(options.TRACE_FILE,'rt') as trace_fh:
         access_type, hex_str_address  = line.split(" ")
         address = int(hex_str_address, 16)
         is_l1_miss = l1_cache.access(access_type, address)
+
+l1_cache.print_stats()
