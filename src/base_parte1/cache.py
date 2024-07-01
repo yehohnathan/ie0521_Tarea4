@@ -21,7 +21,7 @@ class cache:
         # Bit del offset = log2(Tamaño del bloque)
         self.bits_offset = log2(self.block_size)
         # Número de bloques = Capacidad de caché / Tamaño del bloque
-        self.num_blocks = (self.cache_capacity * 1024) / self.block_size
+        self.num_blocks = int((self.cache_capacity * 1024) / self.block_size)
         # Número de sets (conjuntos) = Número de bloques / Asociatividad
         self.num_sets = int(self.num_blocks / self.cache_assoc)
         # Bits de índice = log2(Número de sets)
@@ -112,7 +112,8 @@ class cache:
         for column in range(self.cache_assoc):
             # Se pregunta si la entrada de valid es True (hay dato) y luego si
             # coincide con el tag (se llegó a la dirección exacta).
-            if self.valid_table[index][column] and self.tag_table[index][column] == tag:
+            if self.valid_table[index][column] and (
+               self.tag_table[index][column] == tag):
                 # Hubo hit en la columna de asociatividad:
                 return column
             # En términos de hit, no hubo hit.
@@ -139,21 +140,22 @@ class cache:
             # Se procede a actualizar el caché según LRU:
             if self.repl_policy == "l":
                 # Se obtiene un valor más grande que la asociatividad
-                min_lru = self.cache_assoc + 1
+                min_lru_value = self.repl_data_table[index][0]
+                min_lru_index = 0
+                for column in range(1, self.cache_assoc):
+                    if self.repl_data_table[index][column] < min_lru_value:
+                        min_lru_value = self.repl_data_table[index][column]
+                        min_lru_index = column
 
-                # Se busca la columna con el LRU más bajo en la fila
-                for column in range(self.cache_assoc):
-                    if self.repl_data_table[index][column] < min_lru:
-                        min_lru = column
-
-                self.tag_table[index][min_lru] = tag
-                self.repl_data_table[index][min_lru] = self.cache_assoc - 1
-                self.valid_table[index][min_lru] = True
+                self.tag_table[index][min_lru_index] = tag
+                self.repl_data_table[index][min_lru_index] = self.cache_assoc-1
+                self.valid_table[index][min_lru_index] = True
+                block = min_lru_index
 
             # Politica Random
             elif self.repl_policy == "r":
                 # Se obtiene un valor random de columna a eliminar
-                column = randint(0, self.cache_assoc - 1)
+                column = randint(0, self.cache_assoc)
                 self.tag_table[index][column] = tag
                 self.repl_data_table[index][column] = self.cache_assoc - 1
 
