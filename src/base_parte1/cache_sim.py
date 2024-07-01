@@ -16,14 +16,16 @@ cache = cache(options.cache_capacity, options.cache_assoc,
               options.block_size, options.repl_policy)
 
 i = 0   # SOLO PARA DEBUG
+
+# Info del caché
+cache.print_info()
+
 with gzip.open(options.TRACE_FILE, 'rt') as trace_fh:
+    """"""
     for line in trace_fh:
         line = line.rstrip()
         access_type, hex_str_address = line.split(" ")
         address = int(hex_str_address, 16)
         cache.access(access_type, address)
-        # SOLO PARA DEBUG
-        # i+=1
-        # if i == 25:
-        #    break
+
 cache.print_stats()
