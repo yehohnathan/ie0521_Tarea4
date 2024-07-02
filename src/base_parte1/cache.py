@@ -116,54 +116,42 @@ class cache:
                self.tag_table[index][column] == tag):
                 # Hubo hit en la columna de asociatividad:
                 return column
-            # En términos de hit, no hubo hit.
         return -1
 
     def put_in_cache(self, index, tag):
-        # Se supone que no hay valor vació:
-        empty_block = False
-        block = -1
+        """
+        Se encarga de colocar los datos en el caché despues de ocurrir un
+        miss. La forma en la que ingresan los datos depende de la política
+        de reemplazo a utilizar: LRU o Random.
+        """
+        # Se procede a actualizar el caché según LRU:
+        if self.repl_policy == "l":
+            # Se elige un dato mayor al posible en asociatividad
+            min_lru = self.cache_assoc + 1
+            # Se obtiene un valor más pequeño que la asociatividad
+            for column in range(1, self.cache_assoc):
+                if self.repl_data_table[index][column] < min_lru:
+                    min_lru = column
 
-        # Verifica si en la posición dada por la dirección hay datos, sino,
-        # actualiza el tag e indica que ahora si hay un dato (True).
-        for column in range(self.cache_assoc):
-            if not self.valid_table[index][column]:
-                self.tag_table[index][column] = tag
-                self.valid_table[index][column] = True
-                # Se indica que es el bloque más recientemente usado
-                self.repl_data_table[index][column] = self.cache_assoc - 1
-                empty_block = True
-                block = column
-                break
+            # Se actualizan las tablas
+            self.tag_table[index][min_lru] = tag
+            self.repl_data_table[index][min_lru] = self.cache_assoc
+            self.valid_table[index][min_lru] = True
 
-        if not empty_block:
-            # Se procede a actualizar el caché según LRU:
-            if self.repl_policy == "l":
-                # Se obtiene un valor más grande que la asociatividad
-                min_lru_value = self.repl_data_table[index][0]
-                min_lru_index = 0
-                for column in range(1, self.cache_assoc):
-                    if self.repl_data_table[index][column] < min_lru_value:
-                        min_lru_value = self.repl_data_table[index][column]
-                        min_lru_index = column
-
-                self.tag_table[index][min_lru_index] = tag
-                self.repl_data_table[index][min_lru_index] = self.cache_assoc-1
-                self.valid_table[index][min_lru_index] = True
-                block = min_lru_index
-
-            # Politica Random
-            elif self.repl_policy == "r":
-                # Se obtiene un valor random de columna a eliminar
-                column = randint(0, self.cache_assoc)
-                self.tag_table[index][column] = tag
-                self.repl_data_table[index][column] = self.cache_assoc - 1
-
-        if self.repl_policy == 'l':
             for column in range(self.cache_assoc):
                 # Se coincide con la columna del valor recien reemplazado lo
                 # ignora
-                if column == block:
+                if column == min_lru:
                     continue
                 else:
+                    # Si no, le resta 1 a su contador de política de reemplazo
                     self.repl_data_table[index][column] -= 1
+
+        # Politica Random
+        elif self.repl_policy == "r":
+            # Se obtiene un valor random de columna a eliminar
+            column = randint(0, self.cache_assoc - 1)
+
+            # A partir de lo obtenido se reemplazan el dato de los bloques
+            self.tag_table[index][column] = tag
+            self.valid_table[index][column] = True
