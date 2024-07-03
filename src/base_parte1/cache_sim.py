@@ -18,7 +18,7 @@ cache = cache(options.cache_capacity, options.cache_assoc,
 i = 0   # SOLO PARA DEBUG
 
 # Info del caché
-cache.print_info()
+# cache.print_info()
 
 with gzip.open(options.TRACE_FILE, 'rt') as trace_fh:
     """"""
