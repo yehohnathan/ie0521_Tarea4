@@ -109,13 +109,18 @@ class cache:
             else:
                 self.total_write_misses += 1
         else:
+            # Se accede a hit con LRU
             if self.repl_policy == "l":
-                # Decrementa todos los contadores menos...
+                # Decrementa todos los contadores cuyo valor sea mayor
+                # a la columna que hizo hit. Debido a que eso significa
+                # que fueron usadas antes y ahora estan más cerca de ser
+                # la menos recientemente utilizadas
                 for column in range(self.cache_assoc):
                     if self.repl_data_table[index][column] > (
                        self.repl_data_table[index][hit_index]):
                         self.repl_data_table[index][column] -= 1
-                # El caché con index de hit, cuyo valor es el máximo
+                # El caché con index de hit ahora es el máximo, la más
+                # recientemente utilizada
                 self.repl_data_table[index][hit_index] = self.cache_assoc - 1
 
         # Incrementa la cantidad de accesos
