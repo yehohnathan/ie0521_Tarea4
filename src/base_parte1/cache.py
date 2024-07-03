@@ -33,11 +33,11 @@ class cache:
         # V, TAG, DATA: row = num_sets ^ column = asociatividad
         # El manejo de DATA varía según la política de reemplazo
         self.valid_table = [[False] * self.cache_assoc
-                            for row in range(self.num_sets)]
+                            for _ in range(self.num_sets)]
         self.tag_table = [[0] * self.cache_assoc
-                          for row in range(self.num_sets)]
+                          for _ in range(self.num_sets)]
         self.repl_data_table = [[0] * self.cache_assoc
-                                for row in range(self.num_sets)]
+                                for _ in range(self.num_sets)]
 
     def print_info(self):
         """
@@ -54,13 +54,13 @@ class cache:
         """
         Muestra los resultados obtenidos de la simulación
 
-        Returna:
+        Retorna:
             string: Porcentaje misses y miss rate obtenidos.
         """
         print("Resultados de la simulación")
-        miss_rate = (100.0*self.total_misses) / self.total_access
+        miss_rate = (100.0 * self.total_misses) / self.total_access
         miss_rate = "{:.3f}".format(miss_rate)
-        result_str = str(self.total_misses)+","+miss_rate+"%"
+        result_str = str(self.total_misses) + ", " + miss_rate + "%"
         print(result_str)
 
     def access(self, access_type, address):
@@ -78,17 +78,27 @@ class cache:
         # siguientes t bits de address.
         tag = int(floor(address / (2 ** (self.bits_offset + self.bits_index))))
 
-        # Toma com suposición que no hubo miss. Antes de verificar hit.
+        # Toma como suposición que no hubo miss. Antes de verificar hit.
         miss_occurred = False
 
         # Toma decisiones según el resultado del hit
-        if self.hit_ask(index, tag) == -1:
+        hit_index = self.hit_ask(index, tag)
+        if hit_index == -1:
             # Pone el dato en el caché por haber miss
             self.put_in_cache(index, tag)
             # Incrementa el total de misses
             self.total_misses += 1
             # Indica que al final si hubo miss
             miss_occurred = True
+        else:
+            if self.repl_policy == "l":
+                # Decrementa todos los contadores menos...
+                for column in range(self.cache_assoc):
+                    if self.repl_data_table[index][column] > (
+                       self.repl_data_table[index][hit_index]):
+                        self.repl_data_table[index][column] -= 1
+                # El caché con index de hit, cuyo valor es el máximo
+                self.repl_data_table[index][hit_index] = self.cache_assoc - 1
 
         # Incrementa la cantidad de accesos
         self.total_access += 1
@@ -106,7 +116,7 @@ class cache:
             tag (int): Identifica la dirección exacta que está almacenada en
             esa posición.
         Returns:
-            int: posición de la columna donde hubo hit, sino returna -1.
+            int: posición de la columna donde hubo hit, sino retorna -1.
         """
         # Busca si hubo hit en una de las columnas de la fila
         for column in range(self.cache_assoc):
@@ -126,28 +136,31 @@ class cache:
         """
         # Se procede a actualizar el caché según LRU:
         if self.repl_policy == "l":
-            # Se elige un dato mayor al posible en asociatividad
-            min_lru = self.cache_assoc + 1
-            # Se obtiene un valor más pequeño que la asociatividad
-            for column in range(1, self.cache_assoc):
-                if self.repl_data_table[index][column] < min_lru:
-                    min_lru = column
 
-            # Se actualizan las tablas
-            self.tag_table[index][min_lru] = tag
-            self.repl_data_table[index][min_lru] = self.cache_assoc
-            self.valid_table[index][min_lru] = True
+            # Se elige un valor más grande que cualquiera
+            min_lru = self.cache_assoc + 1
+            # Se crea un valor temporal para guardar el index
+            min_index = 0
 
             for column in range(self.cache_assoc):
-                # Se coincide con la columna del valor recien reemplazado lo
-                # ignora
-                if column == min_lru:
-                    continue
-                else:
-                    # Si no, le resta 1 a su contador de política de reemplazo
+                if self.repl_data_table[index][column] < min_lru:
+                    min_lru = self.repl_data_table[index][column]
+                    min_index = column
+
+            # Se actualizan las tablas
+            self.tag_table[index][min_index] = tag
+            self.valid_table[index][min_index] = True
+            # # Este se le asigna el valor máximo al recien victimizado
+            self.repl_data_table[index][min_index] = self.cache_assoc - 1
+
+            for column in range(self.cache_assoc):
+                # Se coincide con la columna del valor recién reemplazado y lo
+                # ignora, si no, le resta 1 a su contador de política de
+                # reemplazo
+                if column != min_index:
                     self.repl_data_table[index][column] -= 1
 
-        # Politica Random
+        # Política Random
         elif self.repl_policy == "r":
             # Se obtiene un valor random de columna a eliminar
             column = randint(0, self.cache_assoc - 1)
