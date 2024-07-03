@@ -75,6 +75,7 @@ class cache:
         result_str += str(self.total_misses) + "," + read_misses + "%, "
         result_str += str(self.total_write_misses) + "," + write_misses + "%"
         print(result_str)
+        return miss_rate
 
     def access(self, access_type, address):
         # Se encuentra la palabra dentro del bloque. Obtiene los últimos
