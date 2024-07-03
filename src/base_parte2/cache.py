@@ -1,85 +1,194 @@
-from math import log2 ,floor #line:1
-class cache :#line:3
-    def __init__ (OOOOO0OO000OOOOOO ,O0O0OOO0O0O000OO0 ,O0OOOO0OOOOO00OOO ,OOOOOO00O0OO00OOO ,OOO000O0O0O0OO00O ):#line:4
-        OOOOO0OO000OOOOOO .total_access =0 #line:6
-        OOOOO0OO000OOOOOO .total_misses =0 #line:7
-        OOOOO0OO000OOOOOO .total_reads =0 #line:8
-        OOOOO0OO000OOOOOO .total_read_misses =0 #line:9
-        OOOOO0OO000OOOOOO .total_writes =0 #line:10
-        OOOOO0OO000OOOOOO .total_write_misses =0 #line:11
-        OOOOO0OO000OOOOOO .cache_capacity =int (O0O0OOO0O0O000OO0 )#line:13
-        OOOOO0OO000OOOOOO .cache_assoc =int (O0OOOO0OOOOO00OOO )#line:14
-        OOOOO0OO000OOOOOO .block_size =int (OOOOOO00O0OO00OOO )#line:15
-        OOOOO0OO000OOOOOO .repl_policy =OOO000O0O0O0OO00O #line:16
-        OOOOO0OO000OOOOOO .byte_offset_size =log2 (OOOOO0OO000OOOOOO .block_size )#line:18
-        OOOOO0OO000OOOOOO .num_sets =int ((OOOOO0OO000OOOOOO .cache_capacity *1024 )/(OOOOO0OO000OOOOOO .block_size *OOOOO0OO000OOOOOO .cache_assoc ))#line:19
-        OOOOO0OO000OOOOOO .index_size =int (log2 (OOOOO0OO000OOOOOO .num_sets ))#line:20
-        OOOOO0OO000OOOOOO .valid_table =[[False for OOO0OO0OOOOO00OOO in range (OOOOO0OO000OOOOOO .cache_assoc )]for O00O00O0000OO00O0 in range (OOOOO0OO000OOOOOO .num_sets )]#line:22
-        OOOOO0OO000OOOOOO .tag_table =[[0 for OOOOOO0000O00OOOO in range (OOOOO0OO000OOOOOO .cache_assoc )]for O00OOO00O00OOOOO0 in range (OOOOO0OO000OOOOOO .num_sets )]#line:23
-        OOOOO0OO000OOOOOO .repl_table =[[0 for OO0000O0O00OOO0O0 in range (OOOOO0OO000OOOOOO .cache_assoc )]for OOOOOO00OO0OOOOO0 in range (OOOOO0OO000OOOOOO .num_sets )]#line:24
-    def print_info (O0000OO0OOOO0OOOO ):#line:26
-        print ("Parámetros del caché:")#line:27
-        print ("\tCapacidad:\t\t\t"+str (O0000OO0OOOO0OOOO .cache_capacity )+"kB")#line:28
-        print ("\tAssociatividad:\t\t\t"+str (O0000OO0OOOO0OOOO .cache_assoc ))#line:29
-        print ("\tTamaño de Bloque:\t\t\t"+str (O0000OO0OOOO0OOOO .block_size )+"B")#line:30
-        print ("\tPolítica de Reemplazo:\t\t\t"+str (O0000OO0OOOO0OOOO .repl_policy ))#line:31
-    def print_stats (O0O00O000O0OO0O0O ):#line:33
-        print ("Resultados de la simulación")#line:34
-        O0OO0OOO00OOOO0O0 =(100.0 *O0O00O000O0OO0O0O .total_misses )/O0O00O000O0OO0O0O .total_access #line:35
-        O0OO0OOO00OOOO0O0 ="{:.3f}".format (O0OO0OOO00OOOO0O0 )#line:36
-        O00OOOOOO0O0000OO =(100.0 *O0O00O000O0OO0O0O .total_read_misses )/O0O00O000O0OO0O0O .total_reads #line:37
-        O00OOOOOO0O0000OO ="{:.3f}".format (O00OOOOOO0O0000OO )#line:38
-        OOO0OO0OOO00O0OO0 =(100.0 *O0O00O000O0OO0O0O .total_write_misses )/O0O00O000O0OO0O0O .total_writes #line:39
-        OOO0OO0OOO00O0OO0 ="{:.3f}".format (OOO0OO0OOO00O0OO0 )#line:40
-        OOOO0OO000O00OO0O =str (O0O00O000O0OO0O0O .total_misses )+","+O0OO0OOO00OOOO0O0 +"%,"+str (O0O00O000O0OO0O0O .total_read_misses )+","#line:41
-        OOOO0OO000O00OO0O +=O00OOOOOO0O0000OO +"%,"+str (O0O00O000O0OO0O0O .total_write_misses )+","+OOO0OO0OOO00O0OO0 +"%"#line:42
-        print (OOOO0OO000O00OO0O )#line:43
-    def access (O0OOO0O0OOOO0OO00 ,O0O0O0O0O0OOO0O0O ,OOOO0O00OOO00OOO0 ):#line:45
-        O0OOOO0OOO0OO0O0O =int (OOOO0O00OOO00OOO0 %(2 **O0OOO0O0OOOO0OO00 .byte_offset_size ))#line:46
-        OOO0OO000OO0O0000 =int (floor (OOOO0O00OOO00OOO0 /(2 **O0OOO0O0OOOO0OO00 .byte_offset_size ))%(2 **O0OOO0O0OOOO0OO00 .index_size ))#line:47
-        O0OOOOO000OO0O000 =int (floor (OOOO0O00OOO00OOO0 /(2 **(O0OOO0O0OOOO0OO00 .byte_offset_size +O0OOO0O0OOOO0OO00 .index_size ))))#line:48
-        OOO0OO0000O00O0O0 =O0OOO0O0OOOO0OO00 .find (OOO0OO000OO0O0000 ,O0OOOOO000OO0O000 )#line:50
-        OO0OO0O0O00OO0O0O =False #line:51
-        if OOO0OO0000O00O0O0 ==-1 :#line:53
-            O0OOO0O0OOOO0OO00 .bring_to_cache (OOO0OO000OO0O0000 ,O0OOOOO000OO0O000 )#line:54
-            O0OOO0O0OOOO0OO00 .total_misses +=1 #line:55
-            if O0O0O0O0O0OOO0O0O =="r":#line:56
-                O0OOO0O0OOOO0OO00 .total_read_misses +=1 #line:57
-            else :#line:58
-                O0OOO0O0OOOO0OO00 .total_write_misses +=1 #line:59
-            OO0OO0O0O00OO0O0O =True #line:60
-        O0OOO0O0OOOO0OO00 .total_access +=1 #line:62
-        if O0O0O0O0O0OOO0O0O =="r":#line:63
-            O0OOO0O0OOOO0OO00 .total_reads +=1 #line:64
-        else :#line:65
-            O0OOO0O0OOOO0OO00 .total_writes +=1 #line:66
-        return OO0OO0O0O00OO0O0O #line:68
-    def find (OOO00OOOOOOOOOOOO ,O0O00000O0OOOO0O0 ,OOO0O000OO0O0O0OO ):#line:70
-        for O0OOO00OO0O0000O0 in range (OOO00OOOOOOOOOOOO .cache_assoc ):#line:71
-            if OOO00OOOOOOOOOOOO .valid_table [O0O00000O0OOOO0O0 ][O0OOO00OO0O0000O0 ]and (OOO00OOOOOOOOOOOO .tag_table [O0O00000O0OOOO0O0 ][O0OOO00OO0O0000O0 ]==OOO0O000OO0O0O0OO ):#line:72
-                return O0OOO00OO0O0000O0 #line:73
-        return -1 #line:74
-    def bring_to_cache (OOOO0000OO0OOO0OO ,O00OO0000OO0O00O0 ,OO00O0OOOO0O00O0O ):#line:76
-        OO000OO0OOOO0O00O =-1 #line:78
-        for OO000O00OO0000O0O in range (OOOO0000OO0OOO0OO .cache_assoc ):#line:79
-            if not OOOO0000OO0OOO0OO .valid_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]:#line:80
-                OOOO0000OO0OOO0OO .valid_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]=True #line:81
-                OOOO0000OO0OOO0OO .tag_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]=OO00O0OOOO0O00O0O #line:82
-                OOOO0000OO0OOO0OO .repl_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]=OOOO0000OO0OOO0OO .cache_assoc -1 #line:83
-                OO000OO0OOOO0O00O =OO000O00OO0000O0O #line:84
-                break #line:85
-        if OOOO0000OO0OOO0OO .repl_policy =="l":#line:88
-            OO00000OOO000O00O =999999 #line:89
-            for OO000O00OO0000O0O in range (OOOO0000OO0OOO0OO .cache_assoc ):#line:92
-                OOO0OO00O0O0000OO =OOOO0000OO0OOO0OO .repl_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]#line:93
-                if OOO0OO00O0O0000OO <OO00000OOO000O00O :#line:94
-                    OO00000OOO000O00O =OO000O00OO0000O0O #line:95
-            OOOO0000OO0OOO0OO .valid_table [O00OO0000OO0O00O0 ][OO00000OOO000O00O ]=True #line:97
-            OOOO0000OO0OOO0OO .tag_table [O00OO0000OO0O00O0 ][OO00000OOO000O00O ]=OO00O0OOOO0O00O0O #line:98
-            OOOO0000OO0OOO0OO .repl_table [O00OO0000OO0O00O0 ][OO00000OOO000O00O ]=OOOO0000OO0OOO0OO .cache_assoc -1 #line:99
-            OO000OO0OOOO0O00O =OO00000OOO000O00O #line:100
-            for OO000O00OO0000O0O in range (OOOO0000OO0OOO0OO .cache_assoc ):#line:103
-                if OO000O00OO0000O0O ==OO000OO0OOOO0O00O :#line:104
-                    continue #line:105
-                else :#line:106
-                    OOOO0000OO0OOO0OO .repl_table [O00OO0000OO0O00O0 ][OO000O00OO0000O0O ]-=1 
+from math import log2, floor
+from random import randint
+
+
+class cache:
+    def __init__(self, cache_capacity, cache_assoc, block_size, repl_policy):
+        """
+        Inicializador de atributos de la clase caché de la parte 1.
+        """
+        # Contador del total de accesos que ha tenido el caché
+        self.total_access = 0
+        # Contador del total de misses que ha tenido el caché
+        self.total_misses = 0
+
+        # Contadores de la parte 2 del caché:
+        self.total_reads = 0
+        self.total_read_misses = 0
+        self.total_writes = 0
+        self.total_write_misses = 0
+
+        # Atributos que contienen las entradas de la clase (se entiende su uso)
+        self.cache_capacity = int(cache_capacity)
+        self.cache_assoc = int(cache_assoc)
+        self.block_size = int(block_size)
+        self.repl_policy = repl_policy
+
+        # Bit del offset = log2(Tamaño del bloque)
+        self.bits_offset = log2(self.block_size)
+        # Número de bloques = Capacidad de caché / Tamaño del bloque
+        self.num_blocks = int((self.cache_capacity * 1024) / self.block_size)
+        # Número de sets (conjuntos) = Número de bloques / Asociatividad
+        self.num_sets = int(self.num_blocks / self.cache_assoc)
+        # Bits de índice = log2(Número de sets)
+        self.bits_index = int(log2(self.num_sets))
+
+        # Creación de las tablas:
+        # |-- INDEX --|-- V --|-- TAG --|-- DATA --| -> Mapeo directo
+        # INDEX nunca varia.
+        # V, TAG, DATA: row = num_sets ^ column = asociatividad
+        # El manejo de DATA varía según la política de reemplazo
+        self.valid_table = [[False] * self.cache_assoc
+                            for _ in range(self.num_sets)]
+        self.tag_table = [[0] * self.cache_assoc
+                          for _ in range(self.num_sets)]
+        self.repl_data_table = [[0] * self.cache_assoc
+                                for _ in range(self.num_sets)]
+
+    def print_info(self):
+        """
+        Muestra los parámetros usados para la simulación
+        """
+        print("Parámetros del caché:")
+        print("\tCapacidad:\t\t"+str(self.cache_capacity)+"kB")
+        print("\tAssociatividad:\t\t"+str(self.cache_assoc))
+        print("\tTamaño de Bloque:\t"+str(self.block_size)+"B")
+        print("\tPolítica de Reemplazo:\t", end="")
+        print("LRU") if self.repl_policy == "l" else print("Random")
+
+    def print_stats(self):
+        """
+        Muestra los resultados obtenidos de la simulación
+
+        Retorna:
+            string: Porcentaje misses y miss rate obtenidos.
+        """
+        print("Resultados de la simulación")
+        miss_rate = (100.0 * self.total_misses) / self.total_access
+        miss_rate = "{:.3f}".format(miss_rate)
+        read_misses = (100.0 * self.total_read_misses) / self.total_reads
+        read_misses = "{:.3f}".format(read_misses)
+        write_misses = (100.0*self.total_write_misses) / self .total_writes
+        write_misses = "{:.3f}".format(write_misses)
+        result_str = str(self.total_misses) + "," + miss_rate + "%, "
+        result_str += str(self.total_read_misses) + "," + miss_rate + "%, "
+        result_str += str(self.total_misses) + "," + read_misses + "%, "
+        result_str += str(self.total_write_misses) + "," + write_misses + "%"
+        print(result_str)
+
+    def access(self, access_type, address):
+        # Se encuentra la palabra dentro del bloque. Obtiene los últimos
+        # k bits de address.
+        # byte_offset = int(address % (2 ** self.bits_offset))
+
+        # Se utiliza para encontrar la posición del bloque en el caché. Elimina
+        # los últimos k bits de address, luego obtiene los siguientes i bits de
+        # address.
+        index = int(floor(address / (2 ** self.bits_offset)) %
+                    (2 ** self.bits_index))
+        # Identifica la dirección exacta que está almacenada en esa posición.
+        # Elimina los últimos k + i bits de address, luego obtiene los
+        # siguientes t bits de address.
+        tag = int(floor(address / (2 ** (self.bits_offset + self.bits_index))))
+
+        # Toma como suposición que no hubo miss. Antes de verificar hit.
+        miss_occurred = False
+
+        # Toma decisiones según el resultado del hit
+        hit_index = self.hit_ask(index, tag)
+        if hit_index == -1:
+            # Pone el dato en el caché por haber miss
+            self.put_in_cache(index, tag)
+            # Incrementa el total de misses
+            self.total_misses += 1
+            # Indica que al final si hubo miss
+            miss_occurred = True
+            # Cuenta la cantidad de read y write misses:
+            if access_type == "r":
+                self.total_read_misses += 1
+            else:
+                self.total_write_misses += 1
+        else:
+            if self.repl_policy == "l":
+                # Decrementa todos los contadores menos...
+                for column in range(self.cache_assoc):
+                    if self.repl_data_table[index][column] > (
+                       self.repl_data_table[index][hit_index]):
+                        self.repl_data_table[index][column] -= 1
+                # El caché con index de hit, cuyo valor es el máximo
+                self.repl_data_table[index][hit_index] = self.cache_assoc - 1
+
+        # Incrementa la cantidad de accesos
+        self.total_access += 1
+
+        # Incrementa la cantidad de read y writes registrados
+        if access_type == "r":
+            self.total_reads += 1
+        else:
+            self.total_writes += 1
+
+        # Retorna el resultado del acceso
+        return miss_occurred
+
+    def hit_ask(self, index, tag):
+        """
+        Verifica en las direcciones obtenidas si hubo un hit o no.
+
+        Args:
+            index (int): Se utiliza para encontrar la posición del bloque en
+            el caché.
+            tag (int): Identifica la dirección exacta que está almacenada en
+            esa posición.
+        Returns:
+            int: posición de la columna donde hubo hit, sino retorna -1.
+        """
+        # Busca si hubo hit en una de las columnas de la fila
+        for column in range(self.cache_assoc):
+            # Se pregunta si la entrada de valid es True (hay dato) y luego si
+            # coincide con el tag (se llegó a la dirección exacta).
+            if self.valid_table[index][column] and (
+               self.tag_table[index][column] == tag):
+                # Hubo hit en la columna de asociatividad:
+                return column
+        return -1
+
+    def put_in_cache(self, index, tag):
+        """
+        Se encarga de colocar los datos en el caché despues de ocurrir un
+        miss. La forma en la que ingresan los datos depende de la política
+        de reemplazo a utilizar: LRU o Random.
+        """
+        # Se procede a actualizar el caché según LRU:
+        if self.repl_policy == "l":
+
+            # Se elige un valor más grande que cualquiera
+            min_lru = self.cache_assoc + 1
+            # Se crea un valor temporal para guardar el index
+            min_index = 0
+
+            for column in range(self.cache_assoc):
+                if self.repl_data_table[index][column] < min_lru:
+                    min_lru = self.repl_data_table[index][column]
+                    min_index = column
+
+            # Se actualizan las tablas
+            self.tag_table[index][min_index] = tag
+            self.valid_table[index][min_index] = True
+            # # Este se le asigna el valor máximo al recien victimizado
+            self.repl_data_table[index][min_index] = self.cache_assoc - 1
+
+            for column in range(self.cache_assoc):
+                # Se coincide con la columna del valor recién reemplazado y lo
+                # ignora, si no, le resta 1 a su contador de política de
+                # reemplazo
+                if column != min_index:
+                    self.repl_data_table[index][column] -= 1
+
+        # Política Random
+        elif self.repl_policy == "r":
+            # Se obtiene un valor random de columna a eliminar
+            column = randint(0, self.cache_assoc - 1)
+
+            # A partir de lo obtenido se reemplazan el dato de los bloques
+            self.tag_table[index][column] = tag
+            self.valid_table[index][column] = True
