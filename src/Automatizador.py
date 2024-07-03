@@ -119,7 +119,7 @@ class Automatizador:
         parámetros fijos.
         """
         self.run_tests(
-            "tamaño del caché",
+            "comprobar la tabla del enunciado",
             {'cache_assoc': 16, 'block_size': 64, 'repl_policy': 'l'},
             'cache_capacity', [128],
             "Comprobacion_Tabla.txt"
