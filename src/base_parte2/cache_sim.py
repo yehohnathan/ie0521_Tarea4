@@ -1,7 +1,7 @@
 from optparse import OptionParser
 import gzip
-import sys
-from cache import *
+# import sys
+from cache import cache
 
 parser = OptionParser()
 parser.add_option("--l1_s", dest="l1_s")
@@ -19,10 +19,10 @@ parser.add_option("-t", dest="TRACE_FILE")
 
 l1_cache = cache(options.l1_s, options.l1_a, options.block_size, "l")
 
-with gzip.open(options.TRACE_FILE,'rt') as trace_fh:
+with gzip.open(options.TRACE_FILE, 'rt') as trace_fh:
     for line in trace_fh:
         line = line.rstrip()
-        access_type, hex_str_address  = line.split(" ")
+        access_type, hex_str_address = line.split(" ")
         address = int(hex_str_address, 16)
         is_l1_miss = l1_cache.access(access_type, address)
 
