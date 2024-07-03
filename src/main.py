@@ -3,11 +3,15 @@ from Automatizador import Automatizador
 
 
 def main():
-    automatizador = Automatizador()
-    automatizador.mod_size_cache()
-    automatizador.mod_assoc_cache()
-    automatizador.mod_size_block()
-    automatizador.mod_repl_policy()
+    automatizadorP1 = Automatizador()
+    # Verifica la tabla:
+    automatizadorP1.table_example()
+
+    # Realiza todas las pruebas solicitadas
+    automatizadorP1.mod_size_cache()
+    automatizadorP1.mod_assoc_cache()
+    automatizadorP1.mod_size_block()
+    automatizadorP1.mod_repl_policy()
 
 
 """ ======================== Ejecución del main ======================= """

@@ -113,6 +113,18 @@ class Automatizador:
         with open(output_file, 'w') as f:
             f.write(message)
 
+    def table_example(self):
+        """
+        Ejecuta pruebas variando el tamaño del caché y mantiene otros
+        parámetros fijos.
+        """
+        self.run_tests(
+            "tamaño del caché",
+            {'cache_assoc': 16, 'block_size': 64, 'repl_policy': 'l'},
+            'cache_capacity', [128],
+            "Comprobacion_Tabla.txt"
+        )
+
     def mod_size_cache(self):
         """
         Ejecuta pruebas variando el tamaño del caché y mantiene otros
