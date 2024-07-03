@@ -6,243 +6,243 @@ block_size = 64
 
 +++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-438,0.044%
+Resultados de la simulación
+339, 0.034%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-287,0.029%
+Resultados de la simulación
+235, 0.024%
 
 +++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-134483,13.448%
+Resultados de la simulación
+18480, 1.848%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-19082,1.908%
+Resultados de la simulación
+18860, 1.886%
 
 +++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-308255,30.826%
+Resultados de la simulación
+28509, 2.851%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-24315,2.432%
+Resultados de la simulación
+21639, 2.164%
 
 +++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-159769,15.977%
+Resultados de la simulación
+26350, 2.635%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-16439,1.644%
+Resultados de la simulación
+16065, 1.607%
 
 +++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-377105,37.711%
+Resultados de la simulación
+11854, 1.185%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-12522,1.252%
+Resultados de la simulación
+11729, 1.173%
 
 +++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-210823,21.082%
+Resultados de la simulación
+107387, 10.739%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-107671,10.767%
+Resultados de la simulación
+107254, 10.725%
 
 +++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-869813,86.981%
+Resultados de la simulación
+22347, 2.235%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-22384,2.238%
+Resultados de la simulación
+22083, 2.208%
 
 +++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-33562,3.356%
+Resultados de la simulación
+4797, 0.480%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-4857,0.486%
+Resultados de la simulación
+4248, 0.425%
 
 +++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-69622,6.962%
+Resultados de la simulación
+9945, 0.995%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-7304,0.730%
+Resultados de la simulación
+4344, 0.434%
 
 +++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-62522,6.252%
+Resultados de la simulación
+4400, 0.440%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-4537,0.454%
+Resultados de la simulación
+3968, 0.397%
 
 +++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-40116,4.012%
+Resultados de la simulación
+5677, 0.568%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-5357,0.536%
+Resultados de la simulación
+4368, 0.437%
 
 +++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-295376,29.538%
+Resultados de la simulación
+16117, 1.612%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-15406,1.541%
+Resultados de la simulación
+11407, 1.141%
 
 +++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-735579,73.558%
+Resultados de la simulación
+71251, 7.125%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-69944,6.994%
+Resultados de la simulación
+67734, 6.773%
 
 +++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-320230,32.023%
+Resultados de la simulación
+26570, 2.657%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-27066,2.707%
+Resultados de la simulación
+25001, 2.500%
 
 +++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-511,0.051%
+Resultados de la simulación
+478, 0.048%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-486,0.049%
+Resultados de la simulación
+420, 0.042%
 
 +++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-255938,25.594%
+Resultados de la simulación
+6037, 0.604%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-5161,0.516%
+Resultados de la simulación
+4097, 0.410%
 
 +++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-108046,10.805%
+Resultados de la simulación
+9504, 0.950%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-9316,0.932%
+Resultados de la simulación
+6924, 0.692%
 
 +++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-217259,21.726%
+Resultados de la simulación
+21887, 2.189%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-20077,2.008%
+Resultados de la simulación
+17978, 1.798%
 
 +++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-73043,7.304%
+Resultados de la simulación
+17823, 1.782%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-17797,1.780%
+Resultados de la simulación
+17649, 1.765%
 
 +++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-2434,0.243%
+Resultados de la simulación
+704, 0.070%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-780,0.078%
+Resultados de la simulación
+555, 0.056%
 
 +++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-895223,89.522%
+Resultados de la simulación
+28381, 2.838%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-28471,2.847%
+Resultados de la simulación
+28139, 2.814%
 
 +++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-122081,12.208%
+Resultados de la simulación
+38656, 3.866%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-38730,3.873%
+Resultados de la simulación
+35867, 3.587%
 
 +++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-163314,16.331%
+Resultados de la simulación
+37379, 3.738%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-37393,3.739%
+Resultados de la simulación
+27971, 2.797%
 
 +++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-38078,3.808%
+Resultados de la simulación
+5132, 0.513%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-4919,0.492%
+Resultados de la simulación
+4449, 0.445%
 
 +++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-156626,15.663%
+Resultados de la simulación
+4611, 0.461%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-4447,0.445%
+Resultados de la simulación
+3834, 0.383%
 
 +++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-124176,12.418%
+Resultados de la simulación
+14210, 1.421%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-13904,1.390%
+Resultados de la simulación
+11943, 1.194%
 
 +++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++
 + Política de reemplazo: Random +
-Resultados de la simulación:
-91767,9.177%
+Resultados de la simulación
+21863, 2.186%
 
 + Política de reemplazo: LRU +
-Resultados de la simulación:
-21886,2.189%
+Resultados de la simulación
+20642, 2.064%

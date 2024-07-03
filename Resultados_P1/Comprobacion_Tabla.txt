@@ -1,0 +1,140 @@
+================= Efecto de comprobar la tabla del enunciado =================
+Parámetros fijos:
+cache_assoc = 16
+block_size = 64
+repl_policy = l
+
++++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+234, 0.023%
+
++++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+3912, 0.391%
+
++++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+21331, 2.133%
+
++++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+11523, 1.152%
+
++++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+1050, 0.105%
+
++++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+92791, 9.279%
+
++++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+22083, 2.208%
+
++++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+3087, 0.309%
+
++++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+2854, 0.285%
+
++++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+3968, 0.397%
+
++++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+991, 0.099%
+
++++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+1411, 0.141%
+
++++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+54998, 5.500%
+
++++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+2032, 0.203%
+
++++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+418, 0.042%
+
++++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+2927, 0.293%
+
++++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+1195, 0.119%
+
++++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+17753, 1.775%
+
++++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+17649, 1.765%
+
++++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+555, 0.056%
+
++++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+28139, 2.814%
+
++++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+24494, 2.449%
+
++++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+16488, 1.649%
+
++++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+2866, 0.287%
+
++++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+2760, 0.276%
+
++++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+10652, 1.065%
+
++++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++
++ Variación de comprobar la tabla del enunciado: 128 +
+Resultados de la simulación
+20637, 2.064%
