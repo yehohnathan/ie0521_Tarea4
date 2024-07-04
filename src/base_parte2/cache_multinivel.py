@@ -69,6 +69,7 @@ class CacheMultinivel:
             l1_miss_penalty = 500  # Miss penalty de L1
             l1_miss_rate = float(self.l1_cache.print_stats())/100
             l1_amat = l1_hit_time + l1_miss_rate * l1_miss_penalty
+            l1_amat = "{:.3f}".format(l1_amat)
             print(f"AMAT un nivel de caché: {l1_amat}")
 
         if self.l2_cache:
@@ -78,6 +79,7 @@ class CacheMultinivel:
             l2_miss_rate = float(self.l2_cache.print_stats())/100
             l2_amat = l1_hit_time + l1_miss_rate * (
                       l2_hit_time + l2_miss_rate * l2_miss_penalty)
+            l2_amat = "{:.3f}".format(l2_amat)
             print(f"AMAT dos niveles de caché: {l2_amat}")
 
         if self.l3_cache:
@@ -88,6 +90,7 @@ class CacheMultinivel:
             l3_amat = l1_hit_time + l1_miss_rate * (
                       l2_hit_time + l2_miss_rate * (
                         l3_hit_time + l3_miss_rate * l3_miss_penalty))
+            l3_amat = "{:.3f}".format(l3_amat)
             print(f"AMAT tres niveles de caché: {l3_amat}")
 
     def print_info(self):
