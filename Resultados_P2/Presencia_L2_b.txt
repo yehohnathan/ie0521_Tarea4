@@ -1,0 +1,300 @@
+================= Efecto de Presencia de caché L2 (b) =================
+Parámetros fijos:
+l1_capacity = 32
+l1_assoc = 8
+l2_capacity = 128
+l2_assoc = 16
+l3_capacity = None
+l3_assoc = None
+block_size = 64
+
++++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+235,0.023%, 213,0.023%, 235,0.024%, 22,0.020%
+AMAT un nivel de caché: 4.115
+
+Estadísticas del caché L2:
+Resultados de la simulación
+234,99.574%, 212,99.574%, 234,99.531%, 22,100.000%
+AMAT dos niveles de caché: 4.117
+
++++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+18860,1.858%, 18803,1.858%, 18860,2.022%, 57,0.067%
+AMAT un nivel de caché: 13.290
+
+Estadísticas del caché L2:
+Resultados de la simulación
+3883,20.589%, 3870,20.589%, 3883,20.582%, 13,22.807%
+AMAT dos niveles de caché: 6.136
+
++++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+21639,2.163%, 17257,2.163%, 21639,1.867%, 4382,5.752%
+AMAT un nivel de caché: 14.815
+
+Estadísticas del caché L2:
+Resultados de la simulación
+21360,98.711%, 16979,98.711%, 21360,98.389%, 4381,99.977%
+AMAT dos niveles de caché: 14.935
+
++++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+16065,1.599%, 15623,1.599%, 16065,1.597%, 442,1.703%
+AMAT un nivel de caché: 11.995
+
+Estadísticas del caché L2:
+Resultados de la simulación
+11595,72.176%, 11303,72.176%, 11595,72.348%, 292,66.063%
+AMAT dos niveles de caché: 9.962
+
++++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11729,1.161%, 9420,1.161%, 11729,1.006%, 2309,3.110%
+AMAT un nivel de caché: 9.805
+
+Estadísticas del caché L2:
+Resultados de la simulación
+1050,8.952%, 946,8.952%, 1050,10.042%, 104,4.504%
+AMAT dos niveles de caché: 4.659
+
++++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+107254,10.573%, 107022,10.573%, 107254,10.779%, 232,1.080%
+AMAT un nivel de caché: 56.865
+
+Estadísticas del caché L2:
+Resultados de la simulación
+92876,86.594%, 92707,86.594%, 92876,86.624%, 169,72.845%
+AMAT dos niveles de caché: 51.047
+
++++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+22083,2.208%, 17688,2.208%, 22083,1.842%, 4395,11.107%
+AMAT un nivel de caché: 15.040
+
+Estadísticas del caché L2:
+Resultados de la simulación
+22083,100.000%, 17688,100.000%, 22083,100.000%, 4395,100.000%
+AMAT dos niveles de caché: 15.305
+
++++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4248,0.424%, 4243,0.424%, 4248,0.473%, 5,0.005%
+AMAT un nivel de caché: 6.120
+
+Estadísticas del caché L2:
+Resultados de la simulación
+3061,72.057%, 3056,72.057%, 3061,72.025%, 5,100.000%
+AMAT dos niveles de caché: 5.578
+
++++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4344,0.434%, 4030,0.434%, 4344,0.434%, 314,0.437%
+AMAT un nivel de caché: 6.170
+
+Estadísticas del caché L2:
+Resultados de la simulación
+2873,66.137%, 2560,66.137%, 2873,63.524%, 313,99.682%
+AMAT dos niveles de caché: 5.487
+
++++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+3968,0.397%, 2012,0.397%, 3968,0.204%, 1956,12.713%
+AMAT un nivel de caché: 5.985
+
+Estadísticas del caché L2:
+Resultados de la simulación
+3968,100.000%, 2012,100.000%, 3968,100.000%, 1956,100.000%
+AMAT dos niveles de caché: 6.033
+
++++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4368,0.435%, 4174,0.435%, 4368,0.429%, 194,0.644%
+AMAT un nivel de caché: 6.175
+
+Estadísticas del caché L2:
+Resultados de la simulación
+991,22.688%, 975,22.688%, 991,23.359%, 16,8.247%
+AMAT dos niveles de caché: 4.546
+
++++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11407,1.129%, 8643,1.129%, 11407,0.974%, 2764,2.254%
+AMAT un nivel de caché: 9.645
+
+Estadísticas del caché L2:
+Resultados de la simulación
+1411,12.370%, 991,12.370%, 1411,11.466%, 420,15.195%
+AMAT dos niveles de caché: 4.834
+
++++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+67734,6.689%, 59469,6.689%, 67734,6.242%, 8265,13.773%
+AMAT un nivel de caché: 37.445
+
+Estadísticas del caché L2:
+Resultados de la simulación
+55069,81.302%, 47832,81.302%, 55069,80.432%, 7237,87.562%
+AMAT dos niveles de caché: 31.994
+
++++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+25001,2.444%, 23142,2.444%, 25001,2.553%, 1859,1.594%
+AMAT un nivel de caché: 16.220
+
+Estadísticas del caché L2:
+Resultados de la simulación
+2042,8.168%, 1876,8.168%, 2042,8.106%, 166,8.930%
+AMAT dos niveles de caché: 5.291
+
++++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+420,0.042%, 399,0.042%, 420,0.040%, 21,0.338%
+AMAT un nivel de caché: 4.210
+
+Estadísticas del caché L2:
+Resultados de la simulación
+418,99.524%, 398,99.524%, 418,99.749%, 20,95.238%
+AMAT dos niveles de caché: 4.214
+
++++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4097,0.409%, 2373,0.409%, 4097,0.260%, 1724,1.937%
+AMAT un nivel de caché: 6.045
+
+Estadísticas del caché L2:
+Resultados de la simulación
+3021,73.737%, 1333,73.737%, 3021,56.174%, 1688,97.912%
+AMAT dos niveles de caché: 5.557
+
++++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+6924,0.688%, 5756,0.688%, 6924,0.609%, 1168,1.942%
+AMAT un nivel de caché: 7.440
+
+Estadísticas del caché L2:
+Resultados de la simulación
+1195,17.259%, 977,17.259%, 1195,16.974%, 218,18.664%
+AMAT dos niveles de caché: 4.676
+
++++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++Error ejecutando el comando: Traceback (most recent call last):
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_sim.py", line 42, in <module>
+    cache_multi.print_stats()
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_multinivel.py", line 79, in print_stats
+    l2_miss_rate = float(self.l2_cache.print_stats())/100
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache.py", line 71, in print_stats
+    write_misses = (100.0*self.total_write_misses) / self .total_writes
+ZeroDivisionError: float division by zero
+
++++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++Error ejecutando el comando: Traceback (most recent call last):
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_sim.py", line 42, in <module>
+    cache_multi.print_stats()
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_multinivel.py", line 79, in print_stats
+    l2_miss_rate = float(self.l2_cache.print_stats())/100
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache.py", line 71, in print_stats
+    write_misses = (100.0*self.total_write_misses) / self .total_writes
+ZeroDivisionError: float division by zero
+
++++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+555,0.056%, 174,0.056%, 555,0.018%, 381,1.829%
+AMAT un nivel de caché: 4.280
+
+Estadísticas del caché L2:
+Resultados de la simulación
+555,100.000%, 174,100.000%, 555,100.000%, 381,100.000%
+AMAT dos niveles de caché: 4.287
+
++++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+28139,2.814%, 19562,2.814%, 28139,2.100%, 8577,12.502%
+AMAT un nivel de caché: 18.070
+
+Estadísticas del caché L2:
+Resultados de la simulación
+28139,100.000%, 19562,100.000%, 28139,100.000%, 8577,100.000%
+AMAT dos niveles de caché: 18.408
+
++++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+35867,3.546%, 5509,3.546%, 35867,0.597%, 30358,34.228%
+AMAT un nivel de caché: 21.730
+
+Estadísticas del caché L2:
+Resultados de la simulación
+24456,68.185%, 5474,68.185%, 24456,99.365%, 18982,62.527%
+AMAT dos niveles de caché: 16.515
+
++++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+27971,2.766%, 24994,2.766%, 27971,2.862%, 2977,2.162%
+AMAT un nivel de caché: 17.830
+
+Estadísticas del caché L2:
+Resultados de la simulación
+16818,60.127%, 14297,60.127%, 16818,57.202%, 2521,84.683%
+AMAT dos niveles de caché: 12.647
+
++++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4449,0.444%, 3989,0.444%, 4449,0.436%, 460,0.533%
+AMAT un nivel de caché: 6.220
+
+Estadísticas del caché L2:
+Resultados de la simulación
+2866,64.419%, 2600,64.419%, 2866,65.179%, 266,57.826%
+AMAT dos niveles de caché: 5.483
+
++++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+3834,0.383%, 3531,0.383%, 3834,0.362%, 303,1.213%
+AMAT un nivel de caché: 5.915
+
+Estadísticas del caché L2:
+Resultados de la simulación
+2762,72.040%, 2641,72.040%, 2762,74.795%, 121,39.934%
+AMAT dos niveles de caché: 5.426
+
++++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11943,1.193%, 11797,1.193%, 11943,1.194%, 146,1.086%
+AMAT un nivel de caché: 9.965
+
+Estadísticas del caché L2:
+Resultados de la simulación
+10659,89.249%, 10517,89.249%, 10659,89.150%, 142,97.260%
+AMAT dos niveles de caché: 9.467
+
++++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++Error ejecutando el comando: Traceback (most recent call last):
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_sim.py", line 42, in <module>
+    cache_multi.print_stats()
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache_multinivel.py", line 79, in print_stats
+    l2_miss_rate = float(self.l2_cache.print_stats())/100
+  File "/home/yehoh/UCR/EstructurasII/ie0521_Tarea4/src/base_parte2/cache.py", line 71, in print_stats
+    write_misses = (100.0*self.total_write_misses) / self .total_writes
+ZeroDivisionError: float division by zero

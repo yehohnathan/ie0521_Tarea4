@@ -1,0 +1,171 @@
+================= Efecto de Presencia de caché L1 =================
+Parámetros fijos:
+l1_capacity = 32
+l1_assoc = 8
+l2_capacity = None
+l2_assoc = None
+l3_capacity = None
+l3_assoc = None
+block_size = 64
+
++++++++++ Trace 400.perlbench-41B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+235,0.024%, 213,0.024%, 235,0.024%, 22,0.020%
+AMAT un nivel de caché: 4.120
+
++++++++++ Trace 401.bzip2-226B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+18860,1.886%, 18803,1.886%, 18860,2.022%, 57,0.082%
+AMAT un nivel de caché: 13.430
+
++++++++++ Trace 403.gcc-16B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+21639,2.164%, 17257,2.164%, 21639,1.867%, 4382,5.773%
+AMAT un nivel de caché: 14.820
+
++++++++++ Trace 410.bwaves-1963B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+16065,1.607%, 15623,1.607%, 16065,1.597%, 442,2.057%
+AMAT un nivel de caché: 12.035
+
++++++++++ Trace 416.gamess-875B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11729,1.173%, 9420,1.173%, 11729,1.006%, 2309,3.632%
+AMAT un nivel de caché: 9.865
+
++++++++++ Trace 429.mcf-184B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+107254,10.725%, 107022,10.725%, 107254,10.779%, 232,3.266%
+AMAT un nivel de caché: 57.625
+
++++++++++ Trace 433.milc-127B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+22083,2.208%, 17688,2.208%, 22083,1.842%, 4395,11.107%
+AMAT un nivel de caché: 15.040
+
++++++++++ Trace 435.gromacs-111B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4248,0.425%, 4243,0.425%, 4248,0.473%, 5,0.005%
+AMAT un nivel de caché: 6.125
+
++++++++++ Trace 436.cactusADM-1804B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4344,0.434%, 4030,0.434%, 4344,0.434%, 314,0.446%
+AMAT un nivel de caché: 6.170
+
++++++++++ Trace 437.leslie3d-134B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+3968,0.397%, 2012,0.397%, 3968,0.204%, 1956,12.713%
+AMAT un nivel de caché: 5.985
+
++++++++++ Trace 444.namd-120B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4368,0.437%, 4174,0.437%, 4368,0.429%, 194,0.726%
+AMAT un nivel de caché: 6.185
+
++++++++++ Trace 445.gobmk-17B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11407,1.141%, 8643,1.141%, 11407,0.974%, 2764,2.454%
+AMAT un nivel de caché: 9.705
+
++++++++++ Trace 450.soplex-247B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+67734,6.773%, 59469,6.773%, 67734,6.242%, 8265,17.457%
+AMAT un nivel de caché: 37.865
+
++++++++++ Trace 453.povray-887B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+25001,2.500%, 23142,2.500%, 25001,2.553%, 1859,1.985%
+AMAT un nivel de caché: 16.500
+
++++++++++ Trace 454.calculix-104B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+420,0.042%, 399,0.042%, 420,0.040%, 21,0.338%
+AMAT un nivel de caché: 4.210
+
++++++++++ Trace 456.hmmer-191B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4097,0.410%, 2373,0.410%, 4097,0.260%, 1724,1.961%
+AMAT un nivel de caché: 6.050
+
++++++++++ Trace 458.sjeng-1088B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+6924,0.692%, 5756,0.692%, 6924,0.609%, 1168,2.147%
+AMAT un nivel de caché: 7.460
+
++++++++++ Trace 459.GemsFDTD-1169B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+17978,1.798%, 17978,1.798%, 17978,1.895%, 0,0.000%
+AMAT un nivel de caché: 12.990
+
++++++++++ Trace 462.libquantum-1343B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+17649,1.765%, 17649,1.765%, 17649,1.772%, 0,0.000%
+AMAT un nivel de caché: 12.825
+
++++++++++ Trace 464.h264ref-30B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+555,0.056%, 174,0.056%, 555,0.018%, 381,1.829%
+AMAT un nivel de caché: 4.280
+
++++++++++ Trace 465.tonto-1769B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+28139,2.814%, 19562,2.814%, 28139,2.100%, 8577,12.502%
+AMAT un nivel de caché: 18.070
+
++++++++++ Trace 470.lbm-1274B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+35867,3.587%, 5509,3.587%, 35867,0.597%, 30358,39.282%
+AMAT un nivel de caché: 21.935
+
++++++++++ Trace 471.omnetpp-188B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+27971,2.797%, 24994,2.797%, 27971,2.862%, 2977,2.352%
+AMAT un nivel de caché: 17.985
+
++++++++++ Trace 473.astar-153B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+4449,0.445%, 3989,0.445%, 4449,0.436%, 460,0.542%
+AMAT un nivel de caché: 6.225
+
++++++++++ Trace 481.wrf-1170B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+3834,0.383%, 3531,0.383%, 3834,0.362%, 303,1.268%
+AMAT un nivel de caché: 5.915
+
++++++++++ Trace 482.sphinx3-1100B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+11943,1.194%, 11797,1.194%, 11943,1.194%, 146,1.201%
+AMAT un nivel de caché: 9.970
+
++++++++++ Trace 483.xalancbmk-127B.trace.txt.gz +++++++++
+Estadísticas del caché L1:
+Resultados de la simulación
+20642,2.064%, 20642,2.064%, 20642,2.104%, 0,0.000%
+AMAT un nivel de caché: 14.320
