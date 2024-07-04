@@ -11,15 +11,15 @@ def parse_trace_file(file_path):
         content = file.read()
     
     # Expresiones regulares para encontrar los diferentes bloques de datos
-    trace_pattern = r'\+\+\+\+\+\+\+ Trace ([\w\.\-]+) \+\+\+\+\+\+\+'
+    trace_pattern = r'\+\+\+\+\+\+\+\+\+ Trace ([\w\.\-]+) \+\+\+\+\+\+\+\+\+'
     cache_size_pattern = r'\+ Variación de tamaño del caché: (\d+) \+'
-    results_pattern = r'Resultados de la simulación:\n(\d+),(\d+\.\d+)%'
+    results_pattern = r'Resultados de la simulación\n(\d+), ([\d\.]+)%'
     
     traces = re.split(trace_pattern, content)[1:]
     data = []
     
     for i in range(0, len(traces), 2):
-        trace_name = traces[i]
+        trace_name = traces[i].strip()
         trace_data = traces[i+1]
         cache_sizes = re.findall(cache_size_pattern, trace_data)
         results = re.findall(results_pattern, trace_data)
@@ -67,17 +67,22 @@ if not os.path.exists(output_dir):
 
 # Guardamos los datos en una hoja de cálculo
 mean_miss_rates_df.to_csv(os.path.join(output_dir, 'mean_miss_rates.csv'), index=False)
-data.to_csv(os.path.join(output_dir, 'trace_data.csv'), index=False)
+data.to_csv(os.path.join(output_dir, 'trace_data_cache.csv'), index=False)
 
 # Paso 4: Graficar los Datos
 
 # Graficamos los datos
 plt.figure(figsize=(10, 6))
 plt.plot(mean_miss_rates_df['Cache Size'], mean_miss_rates_df['Mean Miss Rate'], marker='o')
-plt.title('Miss Rate Total Promedio vs Tamaño del Caché')
+plt.title(' Tamaño del Caché vs Miss Rate Total Promedio')
 plt.xlabel('Tamaño del Caché (KB)')
 plt.ylabel('Miss Rate Total Promedio (%)')
+plt.xticks(mean_miss_rates_df['Cache Size'])
+plt.yticks(mean_miss_rates_df['Mean Miss Rate'])
 plt.grid(True)
+
+
+
 plt.savefig(os.path.join(output_dir, 'miss_rate_vs_cache_size.png'))
 plt.show()
 
@@ -105,7 +110,7 @@ def create_latex_table(data, filename):
                 else:
                     row_data.append("& & & ")
             
-            latex_table += " & ".join(row_data) + " \\\\\n"
+            latex_table += " & ".join(row_data) + " \\\\\hline\n"
     
     latex_table += "\\hline\n\\end{tabular}\n\\caption{Resultados de la Simulación del Cache}\n\\label{tab:cache_results}\n\\end{table}"
     
@@ -115,7 +120,7 @@ def create_latex_table(data, filename):
     print(f"La tabla en formato LaTeX se ha guardado correctamente en {filename}.")
 
 # Guardamos la tabla para todos los traces
-create_latex_table(data, os.path.join(output_dir, 'trace_data.tex'))
+create_latex_table(data, os.path.join(output_dir, 'trace_data_cache.tex'))
 
 # Paso 6: Análisis del Trace "465.tonto-1769B.trace.txt.gz"
 
@@ -132,12 +137,17 @@ else:
     # Graficamos los datos del trace específico
     plt.figure(figsize=(10, 6))
     plt.plot(specific_trace_data['Cache Size'], specific_trace_data['Miss Rate'], marker='o')
-    plt.title(f'Miss Rate vs Tamaño del Caché para {specific_trace}')
-    plt.xlabel('Tamaño del Caché (KB)')
+    plt.title(f'Tamaño del Caché para vs Miss Rate  {specific_trace}')
+    plt.xlabel('Tamaño del Caché')
     plt.ylabel('Miss Rate (%)')
+    plt.xticks(specific_trace_data['Cache Size'])
+    plt.yticks(specific_trace_data['Miss Rate'])
     plt.grid(True)
-    plt.savefig(os.path.join(output_dir, f'miss_rate_{specific_trace}.png'))
+    
+    plt.xticks(specific_trace_data['Cache Size'])
+
+    plt.savefig(os.path.join(output_dir, f'miss_rate_cache{specific_trace}.png'))
     plt.show()
     
     # Guardamos la tabla para el trace específico
-    create_latex_table(specific_trace_data, os.path.join(output_dir, 'specific_trace_data.tex'))
+    create_latex_table(specific_trace_data, os.path.join(output_dir, 'specific_trace_data_cache.tex'))
