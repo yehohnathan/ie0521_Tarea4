@@ -22,10 +22,18 @@ def main():
             automatizadorMultiple.presencia_L2_a),
         7: ("Presencia de caché L2 (configuración b)",
             automatizadorMultiple.presencia_L2_b),
-        8: ("Presencia de caché L3 (configuración a)",
-            automatizadorMultiple.presencia_L3_a),
-        9: ("Presencia de caché L3 (configuración b)",
-            automatizadorMultiple.presencia_L3_b)
+        8: ("Presencia de caché L2 (configuración c)",
+            automatizadorMultiple.presencia_L2_c),
+        9: ("Presencia de caché L2 (configuración d)",
+            automatizadorMultiple.presencia_L2_d),
+        10: ("Presencia de caché L3 (configuración a)",
+             automatizadorMultiple.presencia_L3_a),
+        11: ("Presencia de caché L3 (configuración b)",
+             automatizadorMultiple.presencia_L3_b),
+        12: ("Presencia de caché L3 (configuración c)",
+             automatizadorMultiple.presencia_L3_c),
+        13: ("Presencia de caché L3 (configuración d)",
+             automatizadorMultiple.presencia_L3_d)
     }
 
     # Imprimir opciones de prueba

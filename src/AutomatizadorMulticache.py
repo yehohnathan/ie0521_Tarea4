@@ -165,6 +165,38 @@ class AutomatizadorMulticache:
         self.run_tests("Presencia de caché L2 (b)", fixed_params,
                        "Presencia_L2_b.txt")
 
+    def presencia_L2_c(self):
+        """
+        Ejecuta pruebas para la presencia de caché L2 (configuración c).
+        """
+        fixed_params = {
+            'l1_capacity': 32,
+            'l1_assoc': 8,
+            'l2_capacity': 128,
+            'l2_assoc': 8,
+            'l3_capacity': None,
+            'l3_assoc': None,
+            'block_size': 64  # Ajustar según sea necesario
+        }
+        self.run_tests("Presencia de caché L2 (c)", fixed_params,
+                       "Presencia_L2_c.txt")
+
+    def presencia_L2_d(self):
+        """
+        Ejecuta pruebas para la presencia de caché L2 (configuración d).
+        """
+        fixed_params = {
+            'l1_capacity': 32,
+            'l1_assoc': 8,
+            'l2_capacity': 64,
+            'l2_assoc': 16,
+            'l3_capacity': None,
+            'l3_assoc': None,
+            'block_size': 64  # Ajustar según sea necesario
+        }
+        self.run_tests("Presencia de caché L2 (d)", fixed_params,
+                       "Presencia_L2_d.txt")
+
     def presencia_L3_a(self):
         """
         Ejecuta pruebas para la presencia de caché L3 (configuración a).
@@ -196,3 +228,35 @@ class AutomatizadorMulticache:
         }
         self.run_tests("Presencia de caché L3 (b)", fixed_params,
                        "Presencia_L3_b.txt")
+
+    def presencia_L3_c(self):
+        """
+        Ejecuta pruebas para la presencia de caché L3 (configuración c).
+        """
+        fixed_params = {
+            'l1_capacity': 32,
+            'l1_assoc': 8,
+            'l2_capacity': 256,
+            'l2_assoc': 8,
+            'l3_capacity': 1024,
+            'l3_assoc': 16,
+            'block_size': 64  # Ajustar según sea necesario
+        }
+        self.run_tests("Presencia de caché L3 (c)", fixed_params,
+                       "Presencia_L3_c.txt")
+
+    def presencia_L3_d(self):
+        """
+        Ejecuta pruebas para la presencia de caché L3 (configuración d).
+        """
+        fixed_params = {
+            'l1_capacity': 32,
+            'l1_assoc': 8,
+            'l2_capacity': 256,
+            'l2_assoc': 8,
+            'l3_capacity': 512,
+            'l3_assoc': 32,
+            'block_size': 64  # Ajustar según sea necesario
+        }
+        self.run_tests("Presencia de caché L3 (d)", fixed_params,
+                       "Presencia_L3_d.txt")
