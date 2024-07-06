@@ -92,8 +92,12 @@ Seleccione la prueba que desea ejecutar:
 5. Presencia de caché L1
 6. Presencia de caché L2 (configuración a)
 7. Presencia de caché L2 (configuración b)
-8. Presencia de caché L3 (configuración a)
-9. Presencia de caché L3 (configuración b)
+8. Presencia de caché L2 (configuración c)
+9. Presencia de caché L2 (configuración d)
+10. Presencia de caché L3 (configuración a)
+11. Presencia de caché L3 (configuración b)
+12. Presencia de caché L3 (configuración c)
+13. Presencia de caché L3 (configuración d)
 Ingrese los números de las pruebas que desea ejecutar separados por espacios:
 ```
 
