@@ -31,8 +31,11 @@ def parse_trace_file(file_path):
             data.append([trace_name, float(amat_l1.group(1)), float(amat_l2.group(1)),float(amat_l3.group(1))])
         else:
             data.append([trace_name, np.nan, np.nan,np.nan])
+        df = pd.DataFrame(data, columns=['Trace', 'AMAT L1', 'AMAT L2', 'AMAT L3'])
+        df['Speedup'] = df['AMAT L2'] / df['AMAT L3']
+        df = df.sort_values(by=('AMAT L1'))
     
-    return pd.DataFrame(data, columns=['Trace', 'Valor AMAT L1', 'Valor AMAT L2', 'Valor AMAT L3'])
+    return df
 
 
 # Parseamos el archivo
@@ -52,13 +55,15 @@ else:
 
 configuration = input("Por favor ingrese que configuración está analizando (a, b c, d): ")
 # Paso 2: Calcular la Media Geométrica, excluyendo valores NaN
-mean_amatL1 = gmean(data['Valor AMAT L1'].dropna())
-mean_amatL2 = gmean(data['Valor AMAT L2'].dropna())
-mean_amatL3 = gmean(data['Valor AMAT L3'].dropna())
+mean_amatL1 = gmean(data['AMAT L1'].dropna())
+mean_amatL2 = gmean(data['AMAT L2'].dropna())
+mean_amatL3 = gmean(data['AMAT L3'].dropna())
+mean_speedup = gmean(data['Speedup'].dropna())
 # Mostramos la media geométrica del AMAT
 print("Media Geométrica de AMAT L1:", mean_amatL1)
 print("Media Geométrica de AMAT L2:", mean_amatL2)
 print("Media Geométrica de AMAT L2:", mean_amatL3)
+print("Media Geométrica de Speedup:", mean_speedup)
 # Definimos el directorio donde se guardarán los archivos
 output_dir = 'Tablas'
 # Creamos el directorio si no existe
@@ -67,27 +72,30 @@ if not os.path.exists(output_dir):
 
 
 
-
+# Guardamos los datos en una hoja de cálculo
+data.to_csv(os.path.join(output_dir, f'{file_path}.csv'), index=False)
 #Paso 3: Creación de tabla Latex
 def create_latex_table(data, filename):
-    latex_table = "\\begin{table}[H]\n\\centering\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n"
-    latex_table += "Trace & AMAT L1 & AMAT L2 AMAT L3 \\\\\n\\hline\n"
+    latex_table = "\\begin{table}[H]\n\\centering\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n"
+    latex_table += "Trace & AMAT L1 & AMAT L2 & AMAT L3 & Speedup\\\\\n\\hline\n"
     #organizar los datos
     
     num_row =len(data)
     row_data = []
     for i in range(num_row): 
         trace_name  =  data.iloc[i]['Trace']
-        amatL1      =       data.iloc[i]['Valor AMAT L1']
-        amatL2      =       data.iloc[i]['Valor AMAT L2']
-        amatL3      =       data.iloc[i]['Valor AMAT L3']
-        row_data.append(f"{trace_name} & {amatL1:.3f}& {amatL2:.3f}& {amatL3:.3f}\\\\\hline\n")
+        amatL1      =       data.iloc[i]['AMAT L1']
+        amatL2      =       data.iloc[i]['AMAT L2']
+        amatL3      =       data.iloc[i]['AMAT L3']
+        speedup     =       data.iloc[i]['Speedup']
+
+        row_data.append(f"{trace_name} & {amatL1:.3f}& {amatL2:.3f}& {amatL3:.3f}& {speedup:.3f}\\\\\hline\n")
   
     
         # Añadir la fila  a la tabla LaTeX
-        latex_table += f"{trace_name} & {amatL1:.3f} & {amatL2:.3f} &  {amatL3:.3f}\\\\\\hline\n"
-    latex_table += f"Media Geométrica & {mean_amatL1:.2f} & {mean_amatL2:.2f}& {mean_amatL3:.2f}\\\\\\hline\n"
-    latex_table += "\\n\\end{tabular}\n\\caption{Resultados de la simulación en presencia del L2 utilizando la configuración" +configuration+"}\n\\label{tab:amatL3"+configuration+"}\n\\end{{table}}"
+        latex_table += f"{trace_name} & {amatL1:.3f} & {amatL2:.3f} &  {amatL3:.3f} & {speedup:.3f}\\\\\\hline\n"
+    latex_table += f"Media Geométrica & {mean_amatL1:.2f} & {mean_amatL2:.2f}& {mean_amatL3:.2f} & {mean_speedup:.2f}\\\\\\hline\n"
+    latex_table += "\\end{tabular}\n\\caption{Resultados de la simulación en presencia del L2 utilizando la configuración " +configuration+"}\n\\label{tab:amatL3"+configuration+"}\n\\end{table}"
     # Guardamos la tabla en un archivo .tex
     with open(filename, 'w') as file:
         file.write(latex_table)

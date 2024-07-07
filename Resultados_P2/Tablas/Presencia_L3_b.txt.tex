@@ -1,38 +1,38 @@
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-Trace & AMAT L1 & AMAT L2 AMAT L3 \\
+Trace & AMAT L1 & AMAT L2 & AMAT L3 & Speedup\\
 \hline
-400.perlbench-41B.trace.txt.gz & 4.115 & 4.117 &  4.131\\\hline
-401.bzip2-226B.trace.txt.gz & 13.275 & 5.400 &  5.527\\\hline
-403.gcc-16B.trace.txt.gz & 14.815 & 14.920 &  16.186\\\hline
-410.bwaves-1963B.trace.txt.gz & 11.995 & 9.898 &  10.579\\\hline
-416.gamess-875B.trace.txt.gz & 9.805 & 4.659 &  4.721\\\hline
-429.mcf-184B.trace.txt.gz & 55.370 & 39.098 &  34.552\\\hline
-433.milc-127B.trace.txt.gz & 15.040 & 15.305 &  16.630\\\hline
-435.gromacs-111B.trace.txt.gz & 6.120 & 5.433 &  5.589\\\hline
-436.cactusADM-1804B.trace.txt.gz & 6.170 & 5.476 &  5.641\\\hline
-437.leslie3d-134B.trace.txt.gz & 5.985 & 6.033 &  6.271\\\hline
-444.namd-120B.trace.txt.gz & 6.175 & 4.546 &  4.605\\\hline
-445.gobmk-17B.trace.txt.gz & 9.645 & 4.834 &  4.918\\\hline
-450.soplex-247B.trace.txt.gz & 36.550 & 22.212 &  17.105\\\hline
-453.povray-887B.trace.txt.gz & 16.215 & 5.139 &  5.228\\\hline
-454.calculix-104B.trace.txt.gz & 4.210 & 4.214 &  4.239\\\hline
-456.hmmer-191B.trace.txt.gz & 6.045 & 5.421 &  5.585\\\hline
-458.sjeng-1088B.trace.txt.gz & 7.440 & 4.676 &  4.748\\\hline
-459.GemsFDTD-1169B.trace.txt.gz & nan & nan &  nan\\\hline
-462.libquantum-1343B.trace.txt.gz & nan & nan &  nan\\\hline
-464.h264ref-30B.trace.txt.gz & 4.280 & 4.287 &  4.320\\\hline
-465.tonto-1769B.trace.txt.gz & 17.920 & 14.343 &  11.707\\\hline
-470.lbm-1274B.trace.txt.gz & 21.695 & 15.515 &  16.846\\\hline
-471.omnetpp-188B.trace.txt.gz & 17.825 & 12.459 &  13.350\\\hline
-473.astar-153B.trace.txt.gz & 6.220 & 5.274 &  5.387\\\hline
-481.wrf-1170B.trace.txt.gz & 5.915 & 5.425 &  5.590\\\hline
-482.sphinx3-1100B.trace.txt.gz & 9.960 & 9.041 &  9.465\\\hline
-483.xalancbmk-127B.trace.txt.gz & nan & nan &  nan\\\hline
-Media Geométrica & 10.11 & 7.59& 7.64\\\hline
-\n\end{tabular}
-\caption{Resultados de la simulación en presencia del L2 utilizando la configuraciónb}
+400.perlbench-41B.trace.txt.gz & 4.115 & 4.117 &  4.131 & 0.997\\\hline
+454.calculix-104B.trace.txt.gz & 4.210 & 4.214 &  4.239 & 0.994\\\hline
+464.h264ref-30B.trace.txt.gz & 4.280 & 4.287 &  4.320 & 0.992\\\hline
+481.wrf-1170B.trace.txt.gz & 5.915 & 5.425 &  5.590 & 0.970\\\hline
+437.leslie3d-134B.trace.txt.gz & 5.985 & 6.033 &  6.271 & 0.962\\\hline
+456.hmmer-191B.trace.txt.gz & 6.045 & 5.421 &  5.585 & 0.971\\\hline
+435.gromacs-111B.trace.txt.gz & 6.120 & 5.433 &  5.589 & 0.972\\\hline
+436.cactusADM-1804B.trace.txt.gz & 6.170 & 5.476 &  5.641 & 0.971\\\hline
+444.namd-120B.trace.txt.gz & 6.175 & 4.546 &  4.605 & 0.987\\\hline
+473.astar-153B.trace.txt.gz & 6.220 & 5.274 &  5.387 & 0.979\\\hline
+458.sjeng-1088B.trace.txt.gz & 7.440 & 4.676 &  4.748 & 0.985\\\hline
+445.gobmk-17B.trace.txt.gz & 9.645 & 4.834 &  4.918 & 0.983\\\hline
+416.gamess-875B.trace.txt.gz & 9.805 & 4.659 &  4.721 & 0.987\\\hline
+482.sphinx3-1100B.trace.txt.gz & 9.960 & 9.041 &  9.465 & 0.955\\\hline
+410.bwaves-1963B.trace.txt.gz & 11.995 & 9.898 &  10.579 & 0.936\\\hline
+401.bzip2-226B.trace.txt.gz & 13.275 & 5.400 &  5.527 & 0.977\\\hline
+403.gcc-16B.trace.txt.gz & 14.815 & 14.920 &  16.186 & 0.922\\\hline
+433.milc-127B.trace.txt.gz & 15.040 & 15.305 &  16.630 & 0.920\\\hline
+453.povray-887B.trace.txt.gz & 16.215 & 5.139 &  5.228 & 0.983\\\hline
+471.omnetpp-188B.trace.txt.gz & 17.825 & 12.459 &  13.350 & 0.933\\\hline
+465.tonto-1769B.trace.txt.gz & 17.920 & 14.343 &  11.707 & 1.225\\\hline
+470.lbm-1274B.trace.txt.gz & 21.695 & 15.515 &  16.846 & 0.921\\\hline
+450.soplex-247B.trace.txt.gz & 36.550 & 22.212 &  17.105 & 1.299\\\hline
+429.mcf-184B.trace.txt.gz & 55.370 & 39.098 &  34.552 & 1.132\\\hline
+459.GemsFDTD-1169B.trace.txt.gz & nan & nan &  nan & nan\\\hline
+462.libquantum-1343B.trace.txt.gz & nan & nan &  nan & nan\\\hline
+483.xalancbmk-127B.trace.txt.gz & nan & nan &  nan & nan\\\hline
+Media Geométrica & 10.11 & 7.59& 7.64 & 0.99\\\hline
+\end{tabular}
+\caption{Resultados de la simulación en presencia del L2 utilizando la configuración b}
 \label{tab:amatL3b}
-\end{{table}}
+\end{table}

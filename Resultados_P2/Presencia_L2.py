@@ -35,8 +35,10 @@ def parse_trace_file(file_path):
         else:
             data.append([trace_name, np.nan, np.nan])
     
-    return pd.DataFrame(data, columns=['Trace', 'Valor AMAT L1', 'Valor AMAT L2'])
-
+    df = pd.DataFrame(data, columns=['Trace', 'AMAT L1', 'AMAT L2'])
+    df['Speedup'] = df['AMAT L1'] / df['AMAT L2']
+    df = df.sort_values(by=('AMAT L1'))
+    return df
 
 # Parseamos el archivo
 # Solicitar al usuario que ingrese el nombre del archivo
@@ -47,6 +49,7 @@ if not os.path.isfile(file_path):
 else:
     # Parseamos el archivo
     data = parse_trace_file(file_path)
+
 # Verificamos que los datos se hayan parseado correctamente
 if data.empty:
     print("No se encontraron datos en el archivo.")
@@ -55,50 +58,45 @@ else:
 
 configuration = input("Por favor ingrese que configuración está analizando (a, b c, d): ")
 # Paso 2: Calcular la Media Geométrica, excluyendo valores NaN
-mean_amatL1 = gmean(data['Valor AMAT L1'].dropna())
-mean_amatL2 = gmean(data['Valor AMAT L2'].dropna())
-
+mean_amatL1 = gmean(data['AMAT L1'].dropna())
+mean_amatL2 = gmean(data['AMAT L2'].dropna())
+mean_speedup = gmean(data['Speedup'].dropna())
 # Mostramos la media geométrica del AMAT
 print("Media Geométrica de AMAT L1:", mean_amatL1)
 print("Media Geométrica de AMAT L2:", mean_amatL2)
-
+print("Media Geométrica de L1/L2:", mean_speedup)
 # Definimos el directorio donde se guardarán los archivos
 output_dir = 'Tablas'
 # Creamos el directorio si no existe
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-
-
-
-import os
-import pandas as pd
-import numpy as np
-
 # Paso 3: Creación de tabla Latex
-def create_latex_table(data, filename, configuration, mean_amatL1, mean_amatL2):
-    latex_table = "\\begin{table}[H]\n\\centering\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\n"
-    latex_table += "Trace & AMAT L1 & AMAT L2 & Trace & AMAT L1 & AMAT L2\\\\\n\\hline\n"
+def create_latex_table(data, filename, configuration, mean_amatL1, mean_amatL2,mean_speedup):
+    latex_table = "\\begin{table}[H]\n\\centering\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n"
+    latex_table += "Trace & AMAT L1 & AMAT L2 & Total AMAT & Trace & AMAT L1 & AMAT L2 & Speedup \\\\\n\\hline\n"
     
     # Organizar los datos
     num_row = len(data)
-    row_data = []
-
+    
     for i in range(0, num_row, 2):
         # Extraer datos del primer resultado en la fila
         trace_name1 = data.iloc[i]['Trace']
-        amatL1_1 = data.iloc[i]['Valor AMAT L1']
-        amatL2_1 = data.iloc[i]['Valor AMAT L2']
+        amatL1_1 = data.iloc[i]['AMAT L1']
+        amatL2_1 = data.iloc[i]['AMAT L2']
+        total_amat_1 = data.iloc[i]['Speedup']
 
         # Extraer datos del segundo resultado en la fila (si existe)
         if i + 1 < num_row:
             trace_name2 = data.iloc[i + 1]['Trace']
-            amatL1_2 = data.iloc[i + 1]['Valor AMAT L1']
-            amatL2_2 = data.iloc[i + 1]['Valor AMAT L2']
+            amatL1_2 = data.iloc[i + 1]['AMAT L1']
+            amatL2_2 = data.iloc[i + 1]['AMAT L2']
+            total_amat_2 = data.iloc[i + 1]['Speedup']
         else:
             trace_name2 = ""
             amatL1_2 = ""
             amatL2_2 = ""
+            total_amat_2 = ""
 
         # Verificar si amatL1_1 y amatL2_1 son valores numéricos
         if isinstance(amatL1_1, (int, float)) and isinstance(amatL2_1, (int, float)):
@@ -112,15 +110,28 @@ def create_latex_table(data, filename, configuration, mean_amatL1, mean_amatL2):
         else:
             amatL1_2_str, amatL2_2_str = str(amatL1_2), str(amatL2_2)
 
-        # Añadir la fila a la tabla LaTeX
-        latex_table += f"{trace_name1} & {amatL1_1_str} & {amatL2_1_str} & {trace_name2} & {amatL1_2_str} & {amatL2_2_str} \\\\\\hline\n"
+        # Verificar si total_amat_1 y total_amat_2 son valores numéricos
+        if isinstance(total_amat_1, (int, float)):
+            total_amat_1_str = f"{total_amat_1:.3f}"
+        else:
+            total_amat_1_str = str(total_amat_1)
 
-    latex_table += f"Media Geométrica & {mean_amatL1:.2f} & {mean_amatL2:.2f} & & &\\\\\\hline\n"
+        if isinstance(total_amat_2, (int, float)):
+            total_amat_2_str = f"{total_amat_2:.3f}"
+        else:
+            total_amat_2_str = str(total_amat_2)
+
+        # Añadir la fila a la tabla LaTeX
+        latex_table += f"{trace_name1} & {amatL1_1_str} & {amatL2_1_str} & {total_amat_1_str} & {trace_name2} & {amatL1_2_str} & {amatL2_2_str} & {total_amat_2_str} \\\\\\hline\n"
+
+    latex_table += f"Media Geométrica & {mean_amatL1:.2f} & {mean_amatL2:.2f}&{mean_speedup:.2f} & & & &\\\\\\hline\n"
     latex_table += "\\end{tabular}\n\\caption{Resultados de la simulación en presencia del L2 utilizando la configuración " + configuration + "}\n\\label{tab:amatL1}\n\\end{table}"
 
     # Guardamos la tabla en un archivo .tex
     with open(filename, 'w') as file:
         file.write(latex_table)
     print(f"La tabla en formato LaTeX se ha guardado correctamente en {filename}.")
-
-create_latex_table(data, os.path.join(output_dir, f'PresenciaL2_{configuration}.tex'), configuration, mean_amatL1, mean_amatL2)
+# Guardamos los datos en una hoja de cálculo
+data.to_csv(os.path.join(output_dir, f'{file_path}.csv'), index=False)
+# Guardamos la tabla para todos los traces
+create_latex_table(data, os.path.join(output_dir, f'PresenciaL2_{configuration}.tex'), configuration, mean_amatL1, mean_amatL2,mean_speedup)

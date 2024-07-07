@@ -1,24 +1,24 @@
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-Trace & AMAT L1 & AMAT L2 & Trace & AMAT L1 & AMAT L2\\
+Trace & AMAT L1 & AMAT L2 & Total AMAT & Trace & AMAT L1 & AMAT L2 & Speedup \\
 \hline
-400.perlbench-41B.trace.txt.gz & 4.115 & 4.117 & 401.bzip2-226B.trace.txt.gz & 13.300 & 6.542 \\\hline
-403.gcc-16B.trace.txt.gz & 14.815 & 14.937 & 410.bwaves-1963B.trace.txt.gz & 11.995 & 9.995 \\\hline
-416.gamess-875B.trace.txt.gz & 9.805 & 4.695 & 429.mcf-184B.trace.txt.gz & 56.880 & 51.202 \\\hline
-433.milc-127B.trace.txt.gz & 15.040 & 15.305 & 435.gromacs-111B.trace.txt.gz & 6.120 & 5.577 \\\hline
-436.cactusADM-1804B.trace.txt.gz & 6.170 & 5.483 & 437.leslie3d-134B.trace.txt.gz & 5.985 & 6.033 \\\hline
-444.namd-120B.trace.txt.gz & 6.175 & 4.546 & 445.gobmk-17B.trace.txt.gz & 9.645 & 4.842 \\\hline
-450.soplex-247B.trace.txt.gz & 37.450 & 32.070 & 453.povray-887B.trace.txt.gz & 16.230 & 5.753 \\\hline
-454.calculix-104B.trace.txt.gz & 4.210 & 4.214 & 456.hmmer-191B.trace.txt.gz & 6.045 & 5.558 \\\hline
-458.sjeng-1088B.trace.txt.gz & 7.440 & 4.685 & 459.GemsFDTD-1169B.trace.txt.gz & nan & nan \\\hline
-462.libquantum-1343B.trace.txt.gz & nan & nan & 464.h264ref-30B.trace.txt.gz & 4.280 & 4.287 \\\hline
-465.tonto-1769B.trace.txt.gz & 18.070 & 18.408 & 470.lbm-1274B.trace.txt.gz & 21.715 & 16.028 \\\hline
-471.omnetpp-188B.trace.txt.gz & 17.830 & 12.679 & 473.astar-153B.trace.txt.gz & 6.220 & 5.486 \\\hline
-481.wrf-1170B.trace.txt.gz & 5.915 & 5.427 & 482.sphinx3-1100B.trace.txt.gz & 9.965 & 9.467 \\\hline
-483.xalancbmk-127B.trace.txt.gz & nan & nan &  &  &  \\\hline
-Media Geométrica & 10.14 & 8.05 & & &\\\hline
+400.perlbench-41B.trace.txt.gz & 4.115 & 4.117 & 1.000 & 401.bzip2-226B.trace.txt.gz & 13.300 & 6.542 & 2.033 \\\hline
+403.gcc-16B.trace.txt.gz & 14.815 & 14.937 & 0.992 & 410.bwaves-1963B.trace.txt.gz & 11.995 & 9.995 & 1.200 \\\hline
+416.gamess-875B.trace.txt.gz & 9.805 & 4.695 & 2.088 & 429.mcf-184B.trace.txt.gz & 56.880 & 51.202 & 1.111 \\\hline
+433.milc-127B.trace.txt.gz & 15.040 & 15.305 & 0.983 & 435.gromacs-111B.trace.txt.gz & 6.120 & 5.577 & 1.097 \\\hline
+436.cactusADM-1804B.trace.txt.gz & 6.170 & 5.483 & 1.125 & 437.leslie3d-134B.trace.txt.gz & 5.985 & 6.033 & 0.992 \\\hline
+444.namd-120B.trace.txt.gz & 6.175 & 4.546 & 1.358 & 445.gobmk-17B.trace.txt.gz & 9.645 & 4.842 & 1.992 \\\hline
+450.soplex-247B.trace.txt.gz & 37.450 & 32.070 & 1.168 & 453.povray-887B.trace.txt.gz & 16.230 & 5.753 & 2.821 \\\hline
+454.calculix-104B.trace.txt.gz & 4.210 & 4.214 & 0.999 & 456.hmmer-191B.trace.txt.gz & 6.045 & 5.558 & 1.088 \\\hline
+458.sjeng-1088B.trace.txt.gz & 7.440 & 4.685 & 1.588 & 459.GemsFDTD-1169B.trace.txt.gz & nan & nan & nan \\\hline
+462.libquantum-1343B.trace.txt.gz & nan & nan & nan & 464.h264ref-30B.trace.txt.gz & 4.280 & 4.287 & 0.998 \\\hline
+465.tonto-1769B.trace.txt.gz & 18.070 & 18.408 & 0.982 & 470.lbm-1274B.trace.txt.gz & 21.715 & 16.028 & 1.355 \\\hline
+471.omnetpp-188B.trace.txt.gz & 17.830 & 12.679 & 1.406 & 473.astar-153B.trace.txt.gz & 6.220 & 5.486 & 1.134 \\\hline
+481.wrf-1170B.trace.txt.gz & 5.915 & 5.427 & 1.090 & 482.sphinx3-1100B.trace.txt.gz & 9.965 & 9.467 & 1.053 \\\hline
+483.xalancbmk-127B.trace.txt.gz & nan & nan & nan &  &  &  &  \\\hline
+Media Geométrica & 10.14 & 8.05&1.26 & & & &\\\hline
 \end{tabular}
 \caption{Resultados de la simulación en presencia del L2 utilizando la configuración c}
 \label{tab:amatL1}

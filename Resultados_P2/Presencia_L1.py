@@ -24,10 +24,9 @@ def parse_trace_file(file_path):
         
         for valor in results:
             data.append([trace_name, float(valor)])
-    # Ajustar la precisión de los números flotantes
-    #pd.set_option('display.float_format', '{:.4f}'.format)  # Ajusta el número de decimales según tus necesidades
-    
-    return pd.DataFrame(data, columns=['Trace', 'Valor AMAT'])
+        df = pd.DataFrame(data, columns=['Trace', 'Valor AMAT'])
+        df = df.sort_values(by="Valor AMAT")
+    return df
 
 # Parseamos el archivo
 file_path = 'Presencia_L1.txt'  # Reemplace con el nombre de su archivo
@@ -96,6 +95,7 @@ def create_latex_table(data, filename):
     with open(filename, 'w') as file:
         file.write(latex_table)
     print(f"La tabla en formato LaTeX se ha guardado correctamente en {filename}.")
-
+# Guardamos los datos en una hoja de cálculo
+data.to_csv(os.path.join(output_dir, f'{file_path}.csv'), index=False)
 # Guardamos la tabla para todos los traces
 create_latex_table(data, os.path.join(output_dir, 'PresenciaL1.tex'))
